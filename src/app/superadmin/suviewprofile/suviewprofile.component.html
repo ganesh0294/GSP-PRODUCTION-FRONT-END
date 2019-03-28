@@ -1,0 +1,82 @@
+<div class="page-header">
+  <h3 class="page-title">
+    View Profile
+  </h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">View Profile</li>
+    </ol>
+  </nav>
+</div>
+<div class="row">
+  <div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">View And Edit Profile Data</h4>
+        <div class="form-group">
+          <label for="exampleInputName1">Name</label>
+          <input type="text" class="form-control" id="exampleInputName1" placeholder="Name"
+            [(ngModel)]="newuploadData.fullName" value="{{newuploadData.fullName}}">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail3">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email"
+            [(ngModel)]="newuploadData.email" value="{{newuploadData.email}}">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputposition">User Position</label>
+          <input type="text" class="form-control" id="exampleInputposition" placeholder="User Position"
+            [(ngModel)]="newuploadData.position" value="{{newuploadData.position}}">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputdepartment">User Department</label>
+          <input type="text" class="form-control" id="exampleInputdepartment" placeholder="User Department"
+            [(ngModel)]="newuploadData.department" value="{{newuploadData.department}}">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputmobile">User Mobile</label>
+          <input type="text" class="form-control" id="exampleInputmobile" placeholder="User Mobile"
+            [(ngModel)]="newuploadData.mobile" value="{{newuploadData.mobile}}">
+        </div>
+
+        <div class="form-group">
+          <label>File upload</label>
+          <input type="file" (change)="onFileChanged($event)" class="file-upload-default" #fileInput>
+          <!-- <input type="file" name="img[]" class="file-upload-default" (change)="fileChangeEvent($event)" multiple/> -->
+          <div class="input-group col-xs-12">
+            <!-- <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image"> -->
+            <span class="input-group-append">
+              <button class="file-upload-browse btn btn-primary" (click)="fileInput.click()" type="button" >Select File</button>
+            </span>
+            <span class="input-group-append" style="margin-left:5px;">
+              <h6>{{selectedFile.name}}</h6>
+            </span>
+
+            <!-- <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput> -->
+              <!-- <button (click)="fileInput.click()">Select File</button> -->
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-success mr-2" (click)="uploadNewData()">Submit</button>
+      </div><hr>
+
+      <!-- <div  class="card-body">
+        <h4 class="card-title">Upload Image</h4>
+        <div class="form-group">
+          <label>File upload</label>
+          <input type="file" name="img[]" class="file-upload-default">
+          <div class="input-group col-xs-12">
+            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+            <span class="input-group-append">
+              <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+            </span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success mr-2" (click)="uploadNewData()">Submit</button>
+      </div> -->
+
+
+    </div>
+  </div>
+</div>

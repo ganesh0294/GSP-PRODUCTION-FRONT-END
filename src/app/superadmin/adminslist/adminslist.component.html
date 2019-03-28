@@ -1,0 +1,125 @@
+<div class="row">
+  <div class="col-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">List Of Admins</h4>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  Profile Pic
+                </th>
+                <th>
+                  Full Name
+                </th>
+                <th>
+                  Department
+                </th>
+                <th>
+                  Designation
+                </th>
+                <th>
+                  Contact
+                </th>
+                <th>
+                  Address
+                </th>
+                <th>
+                  Update
+                </th>
+                <th>
+                  Delete
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor=" let lists of adminDetails">
+                <td>
+                  <img src="assets/images/faces/face1.jpg" class="mr-2" alt="image">
+
+                </td>
+                <td>
+                  {{lists.fullName}}
+                </td>
+                <td>
+                  {{lists.department}}
+                </td>
+                <td>
+                  {{lists.position}}
+                </td>
+                <td>
+                  {{lists.mobile}}
+                </td>
+                <td>
+                  {{lists.mobile}}
+                </td>
+                <td>
+                  <button type="button" class="btn btn-gradient-success btn-sm" (click)="open(content,lists)">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-gradient-danger btn-sm" (click)='DeleteUser(contents,lists)'>
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #contents let-modal style="display:none">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label>Employee Name</label>
+      <input type="text" id="newname" [(ngModel)]='NewEmpData.firstname'>
+      <button>Update</button>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="newname">Employee Name</label>
+      <input type="text" id="newname" [(ngModel)]='NewEmpData.firstname'>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" [(ngModel)]='NewEmpData.email'>
+    </div>
+    <div class="form-group">
+      <label for="position">Position</label>
+      <input type="text" id="position" [(ngModel)]='NewEmpData.position'>
+    </div>
+    <div class="form-group">
+      <label for="designation">Position</label>
+      <input type="text" id="designation" [(ngModel)]='NewEmpData.designation'>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-gradient-success" (click)="UpdateUser()">Update</button>
+  </div>
+</ng-template>
+<hr>
+
+<pre>{{closeResult}}</pre>

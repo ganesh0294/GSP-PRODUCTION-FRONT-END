@@ -1,0 +1,118 @@
+body {
+  background-color: #eee;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  // Red /
+  color: white;
+  margin-bottom: 15px;
+}
+
+.success {
+  padding: 20px;
+  background-color: #249424;
+  // Green /
+  color: white;
+  margin-bottom: 15px;
+}
+input {
+  &[type=button], &[type=submit], &[type=reset] {
+    cursor: pointer;
+    background-color: #56baed;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }&[type=button]:hover, &[type=submit]:hover, &[type=reset]:hover {
+    background-color: #39ace7;
+  }
+  &[type=button]:active, &[type=submit]:active, &[type=reset]:active {
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  &[type=submit]:disabled {
+    background-color: grey;
+    color: white;
+    margin-left:25%;
+  }
+  &[type=text], &[type=password] {
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    //padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    //width: 85%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+  &[type=text]:focus, &[type=password]:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+  }
+  &[type=text] {
+    &:placeholder {
+      color: #cccccc;
+    }
+    &.invalid-textbox {
+      border-bottom: 2px solid #ed5558;
+    }
+  }
+  &[type=password].invalid-textbox {
+    border-bottom: 2px solid #ed5558;
+  }
+}
+
+label.validation-message {
+  color: #ed5558;
+}
+
+
+*[role="form"] {
+  max-width: 530px;
+  padding: 15px;
+  margin: 0;
+  margin-left:32%;
+  background-color: #fff;
+  border-radius: 0.3em;
+  h2 {
+    margin-left: 2em;
+    margin-bottom: 1em;
+  }
+}
+.form-control {
+  padding:0px;
+}
+
+.defined{
+  width:75px;
+  border-top-left-radius:3px;
+  border-top-right-radius: 3px;
+}
+.defineds{
+  width:93px;
+  border-top-left-radius:3px;
+  border-top-right-radius: 3px;
+}
+.company{
+  width:165px;
+}
